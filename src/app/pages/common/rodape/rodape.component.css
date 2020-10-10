@@ -1,0 +1,29 @@
+
+footer{
+    height: 90px;
+    background: black 0% 0% no-repeat padding-box;
+    background-image: linear-gradient(to top, black, #4F4F4F);
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+    font-weight: normal;
+    font-size: 1em;
+    transition: 1s;
+    z-index: 99999999;
+}
+footer:hover{
+    color: #4F4F4F;
+    transition: 1s;
+}
+#quaseTodos{
+    color: #4F4F4F;
+    transition: 10s;
+}
+#quaseTodos:hover{
+    color: whitesmoke;
+    transition: 1s;
+}

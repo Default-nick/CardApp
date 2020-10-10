@@ -1,0 +1,25 @@
+<section id="usuariosPerfis">
+    <ul id="listaUsuarios" *ngFor="let usuario of usuarios">
+        <center>
+            <li id="linhasUsuarios" *ngIf="usuario.id > 0">
+                <br>
+                <section id="bordaImagem">
+                    <img id="imagemPerfil" src={{usuario.img}}/>
+                </section>
+                <a href="http://duckard.com/{{usuario.username}}" target="_blank">
+                    <span id="nomeUsuario">{{usuario.name}}</span>
+                </a>
+                <br>
+                <span id="idUsuario">ID: {{usuario.id}}</span>
+                <br>
+                <span id="apelidoUsuario">
+                    <a href="http://twitter.com/{{usuario.username}}" target="_blank">
+                        {{usuario.username}}
+                    </a>
+                </span>
+                <br>
+                <button id="pagarUsuario" (click) = "abrirModal(usuario.name)">Pagar</button>
+            </li>
+        </center>
+    </ul>
+</section>

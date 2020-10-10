@@ -1,0 +1,75 @@
+#modalFadeout{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.600);
+    position: fixed;
+    z-index: 98;
+}
+#modalExterno{
+    display: flex;
+    position: fixed;
+    width: 600px;
+    height: 300px;
+    margin-left: 420px;
+    margin-top: 210px;
+    border: yellow solid 2px;
+    border-radius: 20px;
+    background-color: Gainsboro;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 99;
+}
+#modalTitulo{
+    position: absolute;
+    margin-top: -230px;
+    text-align: center;
+    font-size: 30px;
+    width: 100%;
+}
+#campoValor{
+    position: absolute;
+    border: black solid 2px;
+    border-radius: 5px;
+    background-color: LightGrey;
+    height: 40px;
+    width: 585px;
+    font-size: 20px;
+    margin-top: -100px;
+}
+#botaoModal{
+    cursor: pointer;
+    height: 50px;
+    position: absolute;
+    width: 70px;
+    margin-top: 200px;
+    background-color: black;
+    color: honeydew;
+    border-radius: 4px;
+    border: yellow solid 1px;
+    outline: none;
+    transition: 1.5s;
+}
+#botaoModal:hover{
+    background-color: honeydew;
+    color: black;
+    font-weight: bold;
+    border:yellow dashed 3px;
+    transition: 0.3s;
+}
+#selecaoCartao{
+    margin-top: 25px;
+    position: absolute;
+    background-color: black;
+    color: whitesmoke;
+    height: 40px;
+    width: 590px;
+    font-size: 20px;
+    font-weight: bolder;
+    border: solid yellow 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: 1s;
+}
