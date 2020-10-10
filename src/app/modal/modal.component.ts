@@ -1,5 +1,6 @@
 import { AbrirModalService } from './../abrir-modal.service';
 import { Component, OnInit } from '@angular/core';
+import { ApiUsuarioService } from '../api-usuario.service'
 
 @Component({
   selector: 'app-modal',
@@ -8,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ModalComponent implements OnInit { 
-  showDisplay:boolean
-  constructor(public displays: AbrirModalService) { }
+  infoCartao;
+  cards = [
+    // valid card
+    {
+      card_number: '1111111111111111',
+      cvv: 789,
+      expiry_date: '01/18',
+    },
+    // invalid card
+    {
+      card_number: '4111111111111234',
+      cvv: 123,
+      expiry_date: '01/20',
+    },
+  ];
 
+  showDisplay:boolean
+  constructor(
+    public displays: AbrirModalService,
+    private verPagamento: ApiUsuarioService
+    ) { }
   statusModal = false
   fecharModal(){
   this.statusModal = this.statusModal
@@ -37,5 +56,9 @@ export class ModalComponent implements OnInit {
   }
   maskSearchDown(event) {
     event.preventDefault();
+  }
+  realizarPagamento(){
+    console.log(this.infoCartao)
+    this.verPagamento.resultadoPagamento(this.infoCartao)
   }
 }

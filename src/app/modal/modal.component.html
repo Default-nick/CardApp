@@ -1,13 +1,12 @@
-<div>
+<section>
     <div id="modalFadeout" (click) = "fecharModal()" [ngStyle] = "{'display' : !showDisplay ? 'none' : 'flex'}">
     </div>
     <div id="modalExterno" [ngStyle] = "{'display' : !showDisplay ? 'none' : 'flex'}">
         <span id="modalTitulo">Pagamento para {{displays.getUsuarioModal()}}</span>
-        <input id="campoValor" [(ngModel)]="q" (keyup)="maskSearch($event)" (keydown)="maskSearchDown($event)" type="text" placeholder="R$ 0,00"/>
-            <select id="selecaoCartao">
-                <option value="1" id="opcaoCartao">Cartão 1</option>
-                <option value="2" id="opcaoCartao">Cartão 2</option>
+        <input id="campoValor" [(ngModel)]="q" (keyup)="maskSearch($event)" (keydown)="maskSearchDown($event)" type="text" placeholder="R$ 0,00" required/>
+            <select id="selecaoCartao" [(ngModel)]="infoCartao" required>
+                <option [ngValue]="infoCartao" *ngFor="let infoCartao of cards" id="opcaoCartao">Cartão com final {{infoCartao.card_number.slice(12,16)}}</option>
             </select>
-        <button id="botaoModal">PAGAR</button>
+        <button id="botaoModal" (click)="realizarPagamento()">PAGAR</button>
     </div>
-</div>
+</section>
